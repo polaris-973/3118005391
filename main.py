@@ -61,12 +61,12 @@ def getSimhash(str):
 # 输入两simhash值，计算汉明距离
 def getDistance(hash1, hash2):
     distance = 0
-    if(len(hash1) != len(hash2)):
-        distance = -1
-    else:
-        for i in range(len(hash1)):
-            if(hash1[i] != hash2[i]):
-                distance += 1
+    # if(len(hash1) != len(hash2)):
+    #     distance = -1
+    # else:
+    for i in range(len(hash1)):
+        if(hash1[i] != hash2[i]):
+            distance += 1
     return distance
 
 
@@ -75,10 +75,12 @@ def getSimilarity(hash1, hash2):
     return 0.01 * (100 - getDistance(hash1, hash2) * 100 / 128)
 
 
-if __name__ == '__main__':
+def test():
     path1 = sys.argv[1]
     path2 = sys.argv[2]
     path3 = sys.argv[3]
+    if len(sys.argv) != 4:
+        print('请按文件格式输入：python main.py [原文文件] [抄袭版论文的文件] [答案文件]')
     keywords_text1 = cutText(path1)
     keywords_text2 = cutText(path2)
     simHash_value1 = getSimhash(keywords_text1)
@@ -87,3 +89,9 @@ if __name__ == '__main__':
     answer_file = open(path3, 'w', encoding='utf-8')
     answer_file.write(str(sim))
     answer_file.close()
+    print('相似度为:%f'%sim)
+
+
+if __name__ == '__main__':
+    test()
+
