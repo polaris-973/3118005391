@@ -61,12 +61,12 @@ def getSimhash(str):
 # 输入两simhash值，计算汉明距离
 def getDistance(hash1, hash2):
     distance = 0
-    # if(len(hash1) != len(hash2)):
-    #     distance = -1
-    # else:
-    for i in range(len(hash1)):
-        if(hash1[i] != hash2[i]):
-            distance += 1
+        if(len(hash1) != len(hash2)):
+        distance = -1
+    else:
+        for i in range(len(hash1)):
+            if(hash1[i] != hash2[i]):
+                distance += 1
     return distance
 
 
