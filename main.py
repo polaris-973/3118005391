@@ -12,6 +12,7 @@ def cutText(text):
     seg_text = file.read()
     words_len = len(list(jieba.lcut(seg_text)))
     topK_num = math.ceil(0.08 * words_len)
+    # topK_num为下面extract_tags()中参数topK的值，因为每篇文章不同，所以没有设置固定的参数值
     words = jieba.analyse.extract_tags(seg_text, topK=topK_num)
     file.close()
     return words
