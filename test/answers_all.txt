@@ -1,0 +1,6 @@
+answer_orig_0.8_add：0.796875
+answer_orig_0.8_del：0.7109375
+answer_orig_0.8_dis_1：0.859375
+answer_orig_0.8_dis_10：0.8203125
+answer_orig_0.8_dis_15：0.6953125
+answer_orig_copy.txt：1.0
